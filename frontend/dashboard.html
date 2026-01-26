@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KrishiMela Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 overflow-y-auto">
+
+  <!-- Navbar with logo -->
+  <div class="flex items-center justify-between bg-white shadow px-4 py-3">
+    <div class="flex items-center space-x-4">
+      <button id="hamburgerBtn" class="text-2xl text-green-800">☰</button>
+
+      <!-- ✅ Logo -->
+     <img src="images/KrishiMela.png" alt="Logo" class="h-10 w-10 rounded-full object-cover" />
+
+      <h1 class="text-2xl font-bold text-green-800">KrishiMela</h1>
+
+      <!-- Header Tabs -->
+      <nav class="ml-6 space-x-4 text-green-700 font-medium">
+        <button class="tabBtn" data-section="home">Home</button>
+        <button class="tabBtn" data-section="crop">Crops</button>
+        <button class="tabBtn" data-section="seed">Seeds</button>
+        <button class="tabBtn" data-section="fertilizer">Fertilizer</button>
+        <button class="tabBtn" data-section="about">About Us</button>
+      </nav>
+    </div>
+    <button id="logoutBtn" class="bg-red-500 text-white px-4 py-1.5 rounded-md">Logout</button>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-green-800 text-white p-4 transform -translate-x-full transition-transform duration-300 z-50"></div>
+
+  <!-- Overlay -->
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+  <!-- Main content -->
+  <main class="p-6 min-h-screen" id="mainContent">
+    <!-- Home Section -->
+    <section id="home" class="section p-6 bg-white rounded-lg shadow space-y-6">
+  <div class="text-center">
+    <h2 class="text-3xl font-bold text-green-700 mb-2"> Welcome to KrishiMela!</h2>
+    <p class="text-gray-700 text-lg">India’s Smart Agriculture Marketplace – bridging the gap between farmers and buyers.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+    <!-- Card 1 -->
+    <div class="bg-green-100 rounded-lg overflow-hidden shadow-md">
+      <img src="images/Crops.webp" alt="Sell Crops" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Sell Crops</h3>
+        <p class="text-gray-700 text-sm">Easily upload your crops and connect with verified buyers in real time.</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-green-100 rounded-lg overflow-hidden shadow-md">
+      <img src="Crops1.png" alt="Search Crops" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Buy Crops</h3>
+        <p class="text-gray-700 text-sm">Explore a wide variety of crops, seeds, and fertilizers at best prices.</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-green-100 rounded-lg overflow-hidden shadow-md">
+      <img src="images/KrishiMela.png" alt="Smart Farming" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Empowering Farmers</h3>
+        <p class="text-gray-700 text-sm">Digital solutions to uplift rural farmers with transparency and trust.</p>
+      </div>
+    </div>
+  
+  <!---- Card 4 -->
+   <div class="bg-green-100 rounded-lg overflow-hidden shadow-md">
+      <img src="images/Fertilizer.webp" alt="Smart Farming" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Sell Fertilier</h3>
+        <p class="text-gray-700 text-sm">Digital solutions to uplift rural farmers with transparency and trust.</p>
+      </div>
+    </div>
+  <!-- Card 5-->
+    <div class="bg-green-100 rounded-lg overflow-hidden shadow-md">
+      <img src="images/Seeds.webp" alt="Smart Farming" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Sell Seeds</h3>
+        <p class="text-gray-700 text-sm">Digital solutions to uplift rural farmers with transparency and trust.</p>
+      </div>
+    </div>
+  <!--Card 6-->
+   <div class="bg-green-100 rounded-lg overflow-hidden shadow-md">
+      <img src="images/Seeds1.webp" alt="Smart Farming" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Buy Seeds</h3>
+        <p class="text-gray-700 text-sm">Digital solutions to uplift rural farmers with transparency and trust.</p>
+      </div>
+    </div>
+    <!-- Card 7 -->
+    <div class="bg-green-100 rounded-lg overflow-hidden shadow-md">
+      <img src="https://via.placeholder.com/400x200?text=Crop+Search+Page" alt="Search Crops" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Buy Crops</h3>
+        <p class="text-gray-700 text-sm">Explore a wide variety of crops, seeds, and fertilizers at best prices.</p>
+      </div>
+    </div>
+    <!-- Card 8 -->
+    <div class="bg-green-100 rounded-lg overflow-hidden shadow-md">
+      <img src="https://via.placeholder.com/400x200?text=Crop+Search+Page" alt="Search Crops" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Buy Crops</h3>
+        <p class="text-gray-700 text-sm">Explore a wide variety of crops, seeds, and fertilizers at best prices.</p>
+      </div>
+    </div>
+    <!-- Card 9 -->
+    <div class="bg-green-100 rounded-lg overflow-hidden shadow-md">
+      <img src="https://via.placeholder.com/400x200?text=Crop+Search+Page" alt="Search Crops" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-green-800 mb-2">Buy Crops</h3>
+        <p class="text-gray-700 text-sm">Explore a wide variety of crops, seeds, and fertilizers at best prices.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="mt-6 text-center text-gray-600">
+    🚀 Join thousands of users who trust KrishiMela for smarter farming!
+  </div>
+</section>
+
+    <!-- Crops Section -->
+    <section id="crop" class="section hidden space-y-6">
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-lg font-semibold text-green-700 mb-2">🛒 Buy Crop</h3>
+        <p>Browse available crops to purchase.</p>
+        <button onclick="window.location.href='crop-buy.html'" class="mt-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Buy Crop</button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-lg font-semibold text-green-700 mb-2">📤 Sell Crop</h3>
+        <p>Upload your crops to sell to buyers.</p>
+        <button onclick="window.location.href='crop-sell.html'" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Sell Crop</button>
+      </div>
+    </section>
+
+    <!-- Seeds Section -->
+    <section id="seed" class="section hidden space-y-6">
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-lg font-semibold text-green-700 mb-2">🌿 Buy Seeds</h3>
+        <p>Find and purchase high-quality seeds.</p>
+        <button onclick="window.location.href='seed-buy.html'" class="mt-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Buy Sedds</button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-lg font-semibold text-green-700 mb-2">📦 Sell Seeds</h3>
+        <p>Upload and sell your seeds to farmers.</p>
+        <button onclick="window.location.href='seed-sell.html'" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Sell Seed</button>
+      </div>
+    </section>
+
+    <!-- Fertilizer Section -->
+    <section id="fertilizer" class="section hidden space-y-6">
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-lg font-semibold text-green-700 mb-2">🧪 Buy Fertilizers</h3>
+        <p>Get the right fertilizers for your crops.</p>
+        <button onclick="window.location.href='fertilizer-buy.html'" class="mt-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Buy Fertilizer</button>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow">
+        <h3 class="text-lg font-semibold text-green-700 mb-2">🚛 Sell Fertilizers</h3>
+        <p>Sell fertilizers and boost crop yields.</p>
+        <button onclick="window.location.href='fertilizer-sell.html'" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Sell Fertilizer</button>
+      </div>
+    </section>
+
+    <!-- About Us -->
+   <section id="about" class="section p-6 bg-white rounded-lg shadow">
+  <h2 class="text-2xl font-bold text-green-700 mb-4">🌿 About Us</h2>
+  <p class="text-gray-700 leading-relaxed">
+    <strong>KrishiMela</strong> is a smart digital platform built to empower Indian farmers and connect them directly with buyers.
+    </br> We are dedicated to improving agricultural trade by offering a transparent, secure, and efficient way to buy and sell crops, seeds, and fertilizers online.
+  </p>
+
+  <div class="mt-4 text-gray-700">
+    <p><strong>🌱 Our Vision:</strong> To digitally transform agriculture and build a self-reliant rural India.</p><br/><p><strong>🌱 Our Vision:</strong> To digitally transform agriculture and build a self-reliant rural India.</p><br/>
+    <p><strong>🤝 Our Mission:</strong> Ensure fair prices for farmers, connect buyers directly to farms, and promote smart & sustainable farming.</p></br>
+    <p><strong>🚜 What We Offer:</strong> Crop marketplace, seed & fertilizer deals, secure payments, and instant access for all users.</p>,</br>
+  </div>
+
+  <div class="mt-6 border-t pt-4 text-sm text-gray-500 text-center">
+    © 2025 KrishiMela. All rights reserved. Crafted with Sanjeev ❤️ for farmers.
+  </div>
+</section>
+
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

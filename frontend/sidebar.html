@@ -1,0 +1,48 @@
+<div class="h-full flex flex-col justify-between">
+  <div>
+    <h2 class="text-2xl font-bold mb-6">🌿 KrishiMela</h2>
+    <ul class="space-y-4 font-semibold text-lg">
+
+      <!-- Home -->
+      <li data-section="home" class="cursor-pointer hover:text-green-300">🏠 Home</li>
+
+      <!-- Crops -->
+      <li data-section="crop" class="cursor-pointer hover:text-green-300">🌾 Crops</li>
+      <ul class="ml-4 space-y-2">
+        <li><a href="crop-buy.html" class="hover:text-green-300 block">🛒 Buy Crops</a></li>
+        <li><a href="crop-sell.html" class="hover:text-green-300 block">📤 Sell Crops</a></li>
+      </ul>
+
+      <!-- Seeds -->
+      <li data-section="seed" class="cursor-pointer hover:text-green-300">🌱 Seeds</li>
+      <ul class="ml-4 space-y-2">
+        <li><a href="seed-buy.html" class="hover:text-green-300 block">🌿 Buy Seeds</a></li>
+        <li><a href="seed-sell.html" class="hover:text-green-300 block">📦 Sell Seeds</a></li>
+      </ul>
+
+      <!-- Fertilizer -->
+      <li data-section="fertilizer" class="cursor-pointer hover:text-green-300">🧪 Fertilizer</li>
+      <ul class="ml-4 space-y-2">
+        <li><a href="fertilizer-buy.html" class="hover:text-green-300 block">🧪 Buy Fertilizer</a></li>
+        <li><a href="fertilizer-sell.html" class="hover:text-green-300 block">🚛 Sell Fertilizer</a></li>
+      </ul>
+
+      <!-- About -->
+      <li data-section="about" class="cursor-pointer hover:text-green-300">ℹ️ About Us</li>
+
+      <!-- Logout -->
+      <li onclick="logout()" class="cursor-pointer text-red-300 hover:text-red-500">🚪 Logout</li>
+    </ul>
+  </div>
+
+  <p class="text-sm text-gray-300 mt-10">© 2025 KrishiMela</p>
+</div>
+
+<script>
+  // Optional: Trigger logout from sidebar
+  function logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    window.location.href = "login.html";
+  }
+</script>

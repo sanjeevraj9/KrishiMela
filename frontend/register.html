@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - KrishiMela</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="register.js"></script>
+</head>
+<body class="bg-green-50 flex justify-center items-center min-h-screen">
+
+  <div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center text-green-700 mb-6">🌾 Register - KrishiMela</h2>
+
+    <form id="registerForm" class="space-y-4">
+      <input type="text" id="name" placeholder="Full Name" required
+             class="w-full border p-3 rounded-xl" />
+
+       <input type="text" id="username" placeholder="Username" required
+         class="w-full border p-3 rounded-xl" />
+
+      <input type="text" id="contact" placeholder="Email or Mobile Number" required
+             class="w-full border p-3 rounded-xl" />
+
+      <input type="password" id="password" placeholder="Password" required
+             class="w-full border p-3 rounded-xl" />
+
+      <select id="role" class="w-full border p-3 rounded-xl" required>
+        <option value="" disabled selected>Select Role</option>
+        <option value="FARMER">Farmer</option>
+        <option value="BUYER">Buyer</option>
+      </select>
+
+      <button type="submit" id="registerBtn"
+              class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-xl">
+        Register
+      </button>
+    </form>
+  </div>
+
+</body>
+</html>
