@@ -1,9 +1,17 @@
-# Ignore application properties (secrets)
+# Secrets
 backend/src/main/resources/application.properties
 
-# Java / Maven / Gradle
+# Maven / Java
+backend/target/
 target/
 *.class
+
+# IDE files
+.classpath
+.project
+.settings/
+.idea/
+*.iml
 
 # Logs
 *.log
@@ -12,5 +20,5 @@ target/
 .DS_Store
 Thumbs.db
 
-# Node (agar frontend me ho)
+# Node (future use)
 node_modules/
