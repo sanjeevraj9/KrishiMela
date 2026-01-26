@@ -1,6 +1,4 @@
-document.addEventListener("DOMContentLoaded", fetchSeeds);
-
-async function fetchSeeds() {
+async function loadSeeds() {
   try {
     const response = await fetch("http://localhost:8080/api/seeds/search");
 
@@ -11,31 +9,34 @@ async function fetchSeeds() {
     const seeds = await response.json();
     const seedList = document.getElementById("seedList");
 
-    seedList.innerHTML = "";
+    seedList.innerHTML = ""; // clear old
 
     seeds.forEach(seed => {
-      seedList.innerHTML += `
-        <div class="bg-white p-4 rounded-lg shadow">
-          <img 
-            src="http://localhost:8080/images/${seed.image}" 
-            class="h-40 w-full object-cover rounded"
-            onerror="this.src='images/default-seed.jpg'"
-          >
+      const card = document.createElement("div");
+      card.className = "bg-white p-4 rounded-lg shadow";
 
-          <h3 class="text-lg font-semibold mt-2">${seed.name}</h3>
-          <p>Type: ${seed.type}</p>
-          <p>Quantity: ${seed.quantity}</p>
-          <p class="font-semibold text-green-700">₹${seed.price}/kg</p>
+      card.innerHTML = `
+        <img src="${seed.image}" 
+             alt="${seed.name}" 
+             class="h-40 w-full object-cover rounded">
 
-          <button 
-            class="mt-3 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
-            Buy Now
-          </button>
-        </div>
+        <h3 class="text-lg font-semibold mt-2">${seed.name}</h3>
+        <p>Type: ${seed.type}</p>
+        <p>Price: ₹${seed.price}/kg</p>
+
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+          Buy Now
+        </button>
       `;
+
+      seedList.appendChild(card);
     });
 
-  } catch (err) {
-    console.error("Error:", err);
+  } catch (error) {
+    console.error(error);
+    alert("Seeds load nahi ho pa rahe");
   }
 }
+
+// page load pe call
+document.addEventListener("DOMContentLoaded", loadSeeds);
