@@ -1,0 +1,16 @@
+# Ignore application properties (secrets)
+backend/src/main/resources/application.properties
+
+# Java / Maven / Gradle
+target/
+*.class
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node (agar frontend me ho)
+node_modules/
