@@ -1,7 +1,5 @@
-// script.js
-
 document.getElementById("loginForm").addEventListener("submit", async function (e) {
-  e.preventDefault(); // Form reload na ho
+  e.preventDefault();
 
   const email = document.getElementById("username").value;
   const password = document.getElementById("password").value;
@@ -15,20 +13,23 @@ document.getElementById("loginForm").addEventListener("submit", async function (
       body: JSON.stringify({ email, password })
     });
 
-    if (response.ok) {
-      const data = await response.json();
-
-      // ✅ Token save karo localStorage me
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("role", data.role);
-
-      // ✅ Redirect to dashboard
-      window.location.href = "dashboard.html";
-    } else {
-      alert("Invalid credentials. Please try again.");
+    if (!response.ok) {
+      throw new Error("Login failed");
     }
-  } catch (error) {
-    console.error("Login failed:", error);
-    alert("Login failed. Please try again later.");
+
+    const data = await response.json();
+    console.log("LOGIN RESPONSE =>", data);
+
+    // ✅ SAVE DATA (IMPORTANT)
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("name", data.name);
+    localStorage.setItem("email", data.email);
+    localStorage.setItem("role", data.roles[0]);
+
+    window.location.href = "dashboard.html";
+
+  } catch (err) {
+    console.error("Login error:", err);
+    alert("Login failed");
   }
 });

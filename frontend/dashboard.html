@@ -4,6 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KrishiMela Dashboard</title>
+  <style>
+  @keyframes dropdown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-dropdown {
+    animation: dropdown 0.2s ease-out;
+  }
+</style>
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 overflow-y-auto">
@@ -27,8 +44,35 @@
         <button class="tabBtn" data-section="about">About Us</button>
       </nav>
     </div>
-    <button id="logoutBtn" class="bg-red-500 text-white px-4 py-1.5 rounded-md">Logout</button>
+    
+    <!-- Profile Dropdown -->
+<!-- Profile Button -->
+<div class="relative">
+  <button
+    id="profileBtn"
+    class="w-12 h-12 rounded-full bg-green-600 text-white
+           flex items-center justify-center
+           hover:scale-105 active:scale-95
+           transition transform active:scale-95
+           focus:outline-none focus:ring-2 focus:ring-green-400"
+  >
+    <span id="profileAvatar" class="font-bold text-lg">S</span>
+  </button>
+
+  <!-- Dropdown -->
+  <div
+    id="profileMenu"
+    class="hidden absolute right-0 mt-4 w-60 bg-white rounded-xl shadow-lg border z-50 animate-dropdown"
+  ></div>
+</div>
+
+<!-- </div> -->
+
+  <div id="profileMenu"
+    class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow hidden z-50">
+    <!-- JS content inject karega -->
   </div>
+</div>
 
   <!-- Sidebar -->
   <div id="sidebar" class="fixed top-0 left-0 w-64 h-full bg-green-800 text-white p-4 transform -translate-x-full transition-transform duration-300 z-50"></div>
