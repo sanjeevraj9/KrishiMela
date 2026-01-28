@@ -1,34 +1,43 @@
-document.getElementById("fertilizerForm").addEventListener("submit", async function (e) {
+document.getElementById("fertilizerForm")
+  .addEventListener("submit", async function (e) {
+
   e.preventDefault();
 
-  const fertilizerData = {
-    name: document.getElementById("name").value,
-    type: document.getElementById("type").value,
-    quantity: parseFloat(document.getElementById("quantity").value),
-    pricePerKg: parseFloat(document.getElementById("pricePerKg").value),
-    imageUrl: document.getElementById("imageUrl").value,
-    description: document.getElementById("description").value
-  };
+  const token = localStorage.getItem("token");
+  if (!token) {
+    alert("Please login first");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("name", document.getElementById("name").value);
+  formData.append("type", document.getElementById("type").value);
+  formData.append("quantity", document.getElementById("quantity").value);
+  formData.append("price", document.getElementById("price").value);
+  formData.append("description", document.getElementById("description").value);
+  formData.append("image", document.getElementById("image").files[0]);
 
   try {
-    const token = localStorage.getItem("jwtToken");
+    const response = await fetch(
+      "http://localhost:8080/api/fertilizers/add",
+      {
+        method: "POST",
+        headers: {
+          "Authorization": "Bearer " + token
+        },
+        body: formData
+      }
+    );
 
-    const response = await fetch("http://localhost:8080/api/fertilizers", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + token
-      },
-      body: JSON.stringify(fertilizerData)
-    });
-
-    if (response.ok) {
-      alert("Fertilizer submitted successfully!");
-      document.getElementById("fertilizerForm").reset();
-    } else {
-      alert("Failed to submit fertilizer.");
+    if (!response.ok) {
+      throw new Error("Upload failed");
     }
+
+    alert("Fertilizer uploaded successfully!");
+    document.getElementById("fertilizerForm").reset();
+
   } catch (err) {
-    console.error("Error submitting fertilizer:", err);
+    console.error(err);
+    alert("Error uploading fertilizer");
   }
 });

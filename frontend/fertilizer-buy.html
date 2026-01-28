@@ -6,15 +6,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-green-50 p-6 min-h-screen">
-  <h2 class="text-2xl font-bold mb-4">🧪 Fertilizer Buy</h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="bg-white p-4 rounded-lg shadow">
-      <img src="images/urea.jpg" alt="Urea" class="h-40 w-full object-cover rounded">
-      <h3 class="text-lg font-semibold mt-2">Urea</h3>
-      <p>Type: Nitrogen</p>
-      <p>Price: ₹25/kg</p>
-      <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Buy Now</button>
-    </div>
+
+  <h2 class="text-2xl font-bold mb-6">🧪 Buy Fertilizers</h2>
+
+  <!-- Dynamic container -->
+  <div id="fertilizerList"
+       class="grid grid-cols-1 md:grid-cols-3 gap-6">
   </div>
+
+  <script src="fertilizer-buy.js"></script>
 </body>
 </html>
